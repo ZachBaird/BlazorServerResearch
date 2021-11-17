@@ -1,0 +1,34 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Home</PageTitle>
+
+<h2>The below sections are organized by section. Ie. the first section demonstrates routing stuff, and so on.</h2>
+<div class="example-section">
+    <h3>Routing Tests</h3>
+    <div class="example-subsection">
+        <p>Below are buttons that go to different routes, but render the same component. See MultipleRoutes.razor.</p>
+        <NavLink href="/blazorroute" class="btn btn-primary">First Route</NavLink>
+        <NavLink href="/differentblazorroute" class="btn btn-secondary">Second Route</NavLink>
+    </div>
+
+    <NavLink href="/routeparameter/zach" target="_blank" class="btn btn-dark">Route Param w/ Zach</NavLink>
+    <NavLink href="/optionalrouteparameter" target="_blank" class="btn btn-dark">Optional Route Param</NavLink>
+    <NavLink href="/constrainedroute/9" target="_blank" class="btn btn-dark">Constrained Int Route</NavLink>
+    <NavLink href="/constrainedroute2/9/true" target="_blank" class="btn btn-dark">Constrained, Optional Routes</NavLink>
+    <NavLink href="/routeparamwithdots/what.is.up" target="_blank" class="btn btn-dark">Route Param w/ Dot</NavLink>
+    <NavLink href="/catchallrouteparams/this/is/a/test" target="_blank" class="btn btn-dark">Catch All Route Param</NavLink>
+    <button class="btn btn-danger" @onclick="NavigateToTodo">Click this to navigate via C#</button>
+    <NavLink href="/querystringexample?id=9&title=hobbit" target="_blank" class="btn btn-success">Query String Test</NavLink>
+</div>
+
+<div class="example-section">
+    <h3>Next Tests</h3>
+</div>
+
+@code {
+    private void NavigateToTodo()
+    {
+        NavigationManager.NavigateTo("todo");
+    }
+}

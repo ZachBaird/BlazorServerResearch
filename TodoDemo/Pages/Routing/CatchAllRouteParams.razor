@@ -1,0 +1,16 @@
+﻿@page "/catchallrouteparams/{*pageRoute}"
+
+<h3>CatchAllRouteParams</h3>
+
+<p>Your caught param is @PageRoute</p>
+
+<p>Would you like to go to the caught route?</p>
+@if (!string.IsNullOrWhiteSpace(PageRoute))
+{
+    <NavLink><a href="@PageRoute" class="btn btn-dark">Yes</a></NavLink>
+}
+
+@code {
+    [Parameter]
+    public string? PageRoute { get; set; }
+}

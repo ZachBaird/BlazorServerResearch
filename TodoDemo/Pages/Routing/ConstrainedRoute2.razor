@@ -1,0 +1,16 @@
+﻿@page "/constrainedroute2/{Id:int}/{Option:bool?}"
+
+<PageTitle>Second Constrained Route Ex</PageTitle>
+
+<h3>ConstrainedRoute2</h3>
+
+<p>Your Id is @Id</p>
+<p>Your Option is @Option</p>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public bool Option { get; set; }
+}

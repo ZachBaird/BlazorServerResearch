@@ -1,0 +1,18 @@
+﻿@page "/querystringexample"
+
+<PageTitle>Query String Example</PageTitle>
+
+<h3>QueryStringExample</h3>
+
+<p>Id from query string: @Id</p>
+<p>Title from query string: @Title</p>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "id")]
+    public int Id { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "title")]
+    public string? Title { get; set; }
+}

@@ -1,0 +1,35 @@
+﻿@page "/todo"
+@using BlazorServer.Models
+
+<PageTitle>Todo</PageTitle>
+
+<h3>Todo</h3>
+
+<input placeholder="Something todo" @bind="newTitle" />
+<button @onclick="AddTodo" type="submit">Add..</button>
+
+<p>Count: @todos.Count(todo => !todo.IsDone)</p>
+
+<ul>
+    @foreach (var todo in todos)
+    {
+        <li>
+            <input @bind="todo.Title" />
+            <input type="checkbox" @bind="todo.IsDone" />
+        </li>
+    }
+</ul>
+
+@code {
+    private List<TodoItem> todos = new();
+    private string? newTitle;
+
+    private void AddTodo()
+    {
+        if (string.IsNullOrWhiteSpace(newTitle)) return;
+
+        todos.Add(new() { Title = newTitle, IsDone = false });
+
+        newTitle = string.Empty;
+    }
+}

@@ -1,0 +1,22 @@
+﻿@page "/optionalrouteparameter/{text?}"
+
+<PageTitle>Optional Route Param Example</PageTitle>
+
+<h3>OptionalRouteParameter</h3>
+
+<p>Blazor is @Text!</p>
+
+@code {
+    [Parameter]
+    public string? Text { get; set; }
+
+    /// <summary>
+    /// Use OnParametersSet instead of this method to permit app navigation to 
+    ///  the same component with different optional values.
+    ///  Example: /RouteParamter -> /RouteParameter/amazing
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        Text = Text ?? "fantastic";
+    }
+}

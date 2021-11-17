@@ -1,0 +1,14 @@
+﻿@page "/routeparamwithdots/{param?}"
+
+<PageTitle>Route Param w/ Dot</PageTitle>
+
+<h3>RouteParamWithDots</h3>
+<p>The parameter - with dots - is @Param</p>
+
+@code {
+    /// <summary>
+    /// Check out Program.cs and see the MapFallbackToPage to see why this works.
+    /// </summary>
+    [Parameter]
+    public string? Param { get; set; }
+}

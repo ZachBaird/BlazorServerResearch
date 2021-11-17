@@ -1,0 +1,8 @@
+.nav-item {
+    color: #000;
+}
+
+.navbar-toggler-icon, .navbar-toggler {
+    color: #000 !important;
+    background-image: none !important;
+}

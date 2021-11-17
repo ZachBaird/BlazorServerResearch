@@ -1,0 +1,12 @@
+﻿@page "/routeparameter/{text}"
+
+<PageTitle>Passing Parameter in Route Example</PageTitle>
+
+<h3>RouteParameter</h3>
+
+<p>The text you passed in was @Text</p>
+
+@code {
+    [Parameter]
+    public string? Text { get; set; }
+}

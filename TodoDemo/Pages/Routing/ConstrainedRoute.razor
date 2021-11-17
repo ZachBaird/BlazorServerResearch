@@ -1,0 +1,12 @@
+﻿@page "/constrainedroute/{Id:int}"
+
+<PageTitle>Constrained Route</PageTitle>
+
+<h3>ConstrainedRoute</h3>
+
+<p>Your Id is: @Id</p>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+}
